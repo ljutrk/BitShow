@@ -24,7 +24,7 @@ var ctrlModule = (function (data, showData, seasonsData, castData, ui, searchDat
 
     const getAll = () => {
         const request = $.ajax({
-            url: `http://api.tvmaze.com/shows/${showID}?embed[]=seasons&embed[]=cast`
+            url: `https://api.tvmaze.com/shows/${showID}?embed[]=seasons&embed[]=cast`
         })
 
         request.done((response) => {
@@ -40,7 +40,7 @@ var ctrlModule = (function (data, showData, seasonsData, castData, ui, searchDat
 
     const getData = () => {
         const request = $.ajax({
-            url: `http://api.tvmaze.com/shows`
+            url: `https://api.tvmaze.com/shows`
         })
 
         request.done((response) => {
@@ -61,7 +61,7 @@ var ctrlModule = (function (data, showData, seasonsData, castData, ui, searchDat
         $('.search').keypress(function (event) {
             if (event.originalEvent.code === "Enter" || event.originalEvent.code === "NumpadEnter") {
                 const request = $.ajax({
-                    url: `http://api.tvmaze.com/search/shows?q=${word}`
+                    url: `https://api.tvmaze.com/search/shows?q=${word}`
                 })
 
                 request.done((response) => {
